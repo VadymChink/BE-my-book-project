@@ -42,4 +42,15 @@ module.exports = {
             next(e);
         }
     },
+    deleteById: async (req, res, next) => {
+        try{
+            const {id} = req.params;
+
+            await bookService.deleteById({_id:id});
+
+            res.sendStatus(204);
+        }catch (e) {
+            next(e);
+        }
+    },
 }

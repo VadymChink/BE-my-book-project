@@ -13,6 +13,9 @@ module.exports = {
     updateById: (params, dataForUpdate, options = {new: true}) => {
         return Book.findByIdAndUpdate(params, dataForUpdate, options);
     },
+    deleteById: (params) => {
+        return Book.deleteOne(params);
+    },
     count: () => {
         return Book.count();
     }
